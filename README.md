@@ -43,6 +43,10 @@ Usa [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html), así
 
 Las contribuciones son bienvenidas. Lee [CONTRIBUTING.md](CONTRIBUTING.md) antes de abrir un pull request y respeta el [código de conducta](CODE_OF_CONDUCT.md).
 
+## Contacto
+
+Escribe a **edgaralfredoc@proton.me**. Para reportar una vulnerabilidad, sigue la [política de seguridad](SECURITY.md).
+
 ## Licencia
 
 [Apache-2.0](LICENSE) © E25 Solutions.
