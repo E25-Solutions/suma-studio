@@ -1,0 +1,26 @@
+name: Propuesta de función
+description: Una función nueva o una mejora
+labels: [propuesta]
+body:
+  - type: dropdown
+    id: modo
+    attributes:
+      label: Modo
+      options:
+        - Básico
+        - Científico
+        - Interfaz y diseño
+        - Otro
+    validations:
+      required: true
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: Qué propones y para qué sirve
+    validations:
+      required: true
+  - type: textarea
+    id: ejemplo
+    attributes:
+      label: Ejemplo de uso
+      placeholder: "Entrada y resultado esperado"

@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Pruebas y APK de depuración
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Pruebas del motor matemático
+        run: ./gradlew :core-math:jvmTest
+
+      - name: Lint de Android
+        run: ./gradlew :androidApp:lintDebug
+
+      - name: Compilar APK de depuración
+        run: ./gradlew :androidApp:assembleDebug
+
+      - name: Subir APK de depuración
+        uses: actions/upload-artifact@v4
+        with:
+          name: suma-studio-debug
+          path: androidApp/build/outputs/apk/debug/*.apk
+
+      - name: Subir reportes si algo falla
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reportes
+          path: |
+            **/build/reports/
+            **/build/test-results/
