@@ -24,7 +24,7 @@ Quienes participamos en Suma Studio nos comprometemos a que la comunidad sea un 
 
 Los mantenedores del proyecto aclararán y harán cumplir estas normas. Pueden editar o eliminar comentarios, commits, código o issues que no las respeten, y bloquear de forma temporal o permanente a quien las incumpla.
 
-Para reportar un incidente, escribe a **[CORREO DE CONTACTO]**. Todos los reportes se revisan de forma confidencial.
+Para reportar un incidente, escribe a **edgaralfredoc@proton.me**. Todos los reportes se revisan de forma confidencial.
 
 ## Alcance
 
