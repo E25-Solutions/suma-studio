@@ -27,7 +27,7 @@ internal class Tokenizer(private val input: String) {
                     }
                     tokens += Token.Number(BigDecimal.parseString(normalize(text)))
                 }
-                c in "+-*/×÷−" -> {
+                c in "+-*/×÷−%" -> {
                     tokens += Token.Operator(canonical(c))
                     i++
                 }
@@ -57,12 +57,23 @@ internal class Tokenizer(private val input: String) {
  * Analizador descendente recursivo:
  *
  *   expression := term (('+' | '-') term)*
- *   term       := unary (('*' | '/') unary)*
+ *   term       := operand (('*' | '/') operand)*
+ *   operand    := unary '%'?
  *   unary      := ('+' | '-') unary | primary
  *   primary    := number | '(' expression ')'
+ *
+ * Porcentaje, como en las calculadoras de bolsillo:
+ *   a + b%  →  a + a·b/100      (50 + 10% = 55)
+ *   a − b%  →  a − a·b/100      (50 − 10% = 45)
+ *   en cualquier otro lugar, b% = b/100   (50 × 10% = 5)
  */
 internal class Parser(private val tokens: List<Token>) {
     private var position = 0
+
+    /** Un valor que recuerda si se escribió como porcentaje suelto (sin × ni ÷). */
+    private class Operand(val value: BigDecimal, val isPercent: Boolean) {
+        val resolved: BigDecimal get() = if (isPercent) Evaluator.divide(value, HUNDRED) else value
+    }
 
     fun parse(): BigDecimal {
         if (tokens.isEmpty()) throw MathError.Syntax("expresión vacía")
@@ -72,25 +83,44 @@ internal class Parser(private val tokens: List<Token>) {
     }
 
     private fun expression(): BigDecimal {
-        var value = term()
+        var value = term().resolved
         while (true) {
             value = when {
-                match('+') -> value + term()
-                match('-') -> value - term()
+                match('+') -> value + additive(value, term())
+                match('-') -> value - additive(value, term())
                 else -> return value
             }
         }
     }
 
-    private fun term(): BigDecimal {
-        var value = unary()
+    private fun additive(base: BigDecimal, right: Operand): BigDecimal =
+        if (right.isPercent) Evaluator.divide(base * right.value, HUNDRED) else right.value
+
+    private fun term(): Operand {
+        val first = operand()
+        if (!peekMultiplicative()) return first
+        var value = first.resolved
         while (true) {
             value = when {
-                match('*') -> value * unary()
-                match('/') -> Evaluator.divide(value, unary())
-                else -> return value
+                match('*') -> value * operand().resolved
+                match('/') -> Evaluator.divide(value, operand().resolved)
+                else -> return Operand(value, isPercent = false)
             }
         }
+    }
+
+    private fun operand(): Operand {
+        val value = unary()
+        return Operand(value, isPercent = match('%'))
+    }
+
+    private fun peekMultiplicative(): Boolean {
+        val token = tokens.getOrNull(position)
+        return token is Token.Operator && (token.symbol == '*' || token.symbol == '/')
+    }
+
+    private companion object {
+        val HUNDRED = BigDecimal.fromInt(100)
     }
 
     private fun unary(): BigDecimal = when {

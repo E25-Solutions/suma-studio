@@ -18,13 +18,20 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(project(":core-math"))
-            implementation(compose.runtime)
-            implementation(compose.foundation)
-            implementation(compose.material3)
-            implementation(compose.ui)
+            api(project(":core-math"))
+            api(compose.runtime)
+            api(compose.foundation)
+            api(compose.material3)
+            api(compose.ui)
+            implementation(compose.components.resources)
         }
     }
+}
+
+compose.resources {
+    publicResClass = false
+    packageOfResClass = "com.e25solutions.sumastudio.ui.resources"
+    generateResClass = always
 }
 
 android {
