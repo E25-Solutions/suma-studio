@@ -1,0 +1,33 @@
+name: Reporte de error
+description: Un resultado incorrecto o algo que no funciona
+labels: [error]
+body:
+  - type: input
+    id: expresion
+    attributes:
+      label: Expresión exacta
+      placeholder: "Ejemplo: 1 ÷ 3 × 3"
+    validations:
+      required: true
+  - type: input
+    id: obtenido
+    attributes:
+      label: Resultado que dio Suma Studio
+    validations:
+      required: true
+  - type: input
+    id: esperado
+    attributes:
+      label: Resultado esperado y cómo lo verificaste
+      placeholder: "Ejemplo: 1, verificado en una fx-991"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Versión de la app y dispositivo
+      placeholder: "Ejemplo: v1.0.0, Pixel 7, Android 15"
+  - type: textarea
+    id: notas
+    attributes:
+      label: Detalles adicionales
