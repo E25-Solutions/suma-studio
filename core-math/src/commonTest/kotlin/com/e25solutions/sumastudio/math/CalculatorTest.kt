@@ -37,7 +37,7 @@ class CalculatorTest {
     fun vistaPreviaMientrasSeEscribe() {
         assertNull(type("12").preview)
         assertEquals("42", type("12+30").preview)
-        assertEquals("20", type("(2+3)×4").preview)
+        assertEquals("20", type("(2+3(×4").preview)
         assertNull(type("12+30=").preview)
     }
 
