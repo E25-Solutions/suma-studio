@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="history_empty">Your calculations will show up here</string>
+    <string name="error_division_by_zero">Can’t divide by zero</string>
+    <string name="error_syntax">Invalid expression</string>
+    <string name="memory_indicator">M = %1$s</string>
+    <string name="action_copy">Copy</string>
+    <string name="action_paste">Paste</string>
+    <string name="action_clear_history">Clear history</string>
+    <string name="action_vibration_on">Vibration: on</string>
+    <string name="action_vibration_off">Vibration: off</string>
+    <string name="action_more">More options</string>
+    <string name="key_clear">Clear</string>
+    <string name="key_backspace">Delete</string>
+    <string name="key_parentheses">Parentheses</string>
+    <string name="key_percent">Percent</string>
+    <string name="key_divide">Divide</string>
+    <string name="key_times">Multiply</string>
+    <string name="key_minus">Minus</string>
+    <string name="key_plus">Plus</string>
+    <string name="key_equals">Equals</string>
+    <string name="key_decimal">Decimal point</string>
+    <string name="key_toggle_sign">Change sign</string>
+    <string name="key_memory_clear">Memory clear</string>
+    <string name="key_memory_recall">Memory recall</string>
+    <string name="key_memory_add">Memory add</string>
+    <string name="key_memory_subtract">Memory subtract</string>
+</resources>

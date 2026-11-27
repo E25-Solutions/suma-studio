@@ -2,7 +2,7 @@
 
 Calculadora minimalista y de código abierto para Android. Sin anuncios, sin permisos de red y sin rastreo, con resultados exactos: `0.1 + 0.2` da `0.3`, no `0.30000000000000004`.
 
-> **Estado:** Fase 0 — estructura del proyecto. La primera versión usable (calculadora básica) será la v1.0.
+> **Estado:** Fase 1 en desarrollo — la calculadora básica ya funciona; falta pulirla para publicar la v1.0.
 
 ## Qué incluirá
 

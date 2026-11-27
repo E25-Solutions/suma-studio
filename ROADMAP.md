@@ -17,16 +17,19 @@ Cada versión se publica en cuanto cumple su criterio de salida; nada espera a l
 
 ## Fase 1 — Calculadora básica (v1.0)
 
-- [ ] Expresiones completas con precedencia y paréntesis *(ya en `core-math`)*
-- [ ] Suma, resta, multiplicación, división, porcentaje, cambio de signo
-- [ ] Aritmética exacta con decimales de precisión arbitraria *(ya en `core-math`)*
-- [ ] Vista previa del resultado mientras se escribe
-- [ ] Historial con toque para reutilizar un resultado
-- [ ] Memoria (M+, M−, MR, MC)
-- [ ] Copiar y pegar números
-- [ ] Tema claro, oscuro y colores dinámicos (Material You)
-- [ ] Vibración al teclear (desactivable)
-- [ ] Interfaz en español e inglés
+- [x] Expresiones completas con precedencia y paréntesis
+- [x] Suma, resta, multiplicación, división, porcentaje, cambio de signo
+- [x] Aritmética exacta con decimales de precisión arbitraria
+- [x] Vista previa del resultado mientras se escribe
+- [x] Historial con toque para reutilizar un resultado
+- [x] Memoria (M+, M−, MR, MC)
+- [x] Copiar y pegar números
+- [x] Tema claro, oscuro y colores dinámicos (Material You)
+- [x] Vibración al teclear (desactivable; falta recordar la preferencia al cerrar la app)
+- [x] Interfaz en español e inglés
+- [ ] Guardar historial, memoria y preferencias entre sesiones
+- [ ] Ícono de la app
+- [ ] Pruebas en dispositivos reales (teléfono pequeño, grande y tablet)
 
 **Criterio de salida:** pasan todas las pruebas de referencia; APK v1.0 publicado, solicitud a F-Droid y ficha en Google Play.
 

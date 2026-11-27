@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="history_empty">Aquí aparecerán tus cálculos</string>
+    <string name="error_division_by_zero">No se puede dividir entre cero</string>
+    <string name="error_syntax">Expresión no válida</string>
+    <string name="memory_indicator">M = %1$s</string>
+    <string name="action_copy">Copiar</string>
+    <string name="action_paste">Pegar</string>
+    <string name="action_clear_history">Borrar historial</string>
+    <string name="action_vibration_on">Vibración: activada</string>
+    <string name="action_vibration_off">Vibración: desactivada</string>
+    <string name="action_more">Más opciones</string>
+    <string name="key_clear">Borrar todo</string>
+    <string name="key_backspace">Borrar</string>
+    <string name="key_parentheses">Paréntesis</string>
+    <string name="key_percent">Porcentaje</string>
+    <string name="key_divide">Dividir</string>
+    <string name="key_times">Multiplicar</string>
+    <string name="key_minus">Menos</string>
+    <string name="key_plus">Más</string>
+    <string name="key_equals">Igual</string>
+    <string name="key_decimal">Punto decimal</string>
+    <string name="key_toggle_sign">Cambiar signo</string>
+    <string name="key_memory_clear">Borrar memoria</string>
+    <string name="key_memory_recall">Recuperar memoria</string>
+    <string name="key_memory_add">Sumar a memoria</string>
+    <string name="key_memory_subtract">Restar de memoria</string>
+</resources>
